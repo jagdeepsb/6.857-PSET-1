@@ -1,9 +1,8 @@
 import numpy as np
 from table import Table
 
-class Solver():
-    def __init__(self,):
-
+class CipherText():
+    def __init__(self, percent):
         with open('cipher.txt') as f:
             lines = f.readlines()
                     
@@ -12,6 +11,20 @@ class Solver():
             numbers = line[:-1].split(' ')
             for number in numbers:
                 self.cipher.append(int(number))
+        
+        length = max(32, int(len(self.cipher)*percent))
+        self.cipher = self.cipher[0:length]
+
+    def length(self,):
+        return len(self.cipher)
+        
+    def __getitem__ (self, index):
+        return self.cipher[index]
+
+class Solver():
+    def __init__(self,):
+
+        self.cipher = CipherText(1.0)
 
     def decode(self, key):
         
