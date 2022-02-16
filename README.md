@@ -1,6 +1,6 @@
 # 6.857-PSET-1
 
-To run the decrpytion algorith, clone the repo and run:
+To run the decrpytion algorithm, clone the repo and run:
 ```shell
 python main.py
 ```
